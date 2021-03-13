@@ -4,11 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta codigoSemana2="forYourEyesOnly">
+    <meta codigoSemana2="1710406710">
     <link rel="stylesheet" href="style/style.css">
     <title>PWeb - by UmExemplo</title>
 </head>
 <body>
-	<p>Isso é um exemplo.</p>
+    <ul>
+        <li><a href="index.html">Início</a></li>
+        <hr/>
+		<li><a href="noticias.html">Canais de notícias</a></li>
+        <hr/>
+		<li><a class="active" href="adicionarPessoa.html">Adicionar pessoa</a></li>
+		<li><a href="listarPessoas.html">Listar pessoas</a></li>
+        <hr/>
+		<li><a href="sobre.html">Sobre o site</a></li>
+		<li><a href="contato.html">Mande um e-Mail</a></li>
+		
+    </ul>
+
+	<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+	<h1> Formulário para cadastro de pessoas:</h1>
+    <form>
+        <div>
+            <label for="nome">Nome completo*:</label>
+            <input type="text" id="nome" placeholder=" Seu nome completo" />
+        </div> <br />
+        <div>
+            <label for="data">Data de nascimento*:</label>
+            <input type="email" id="email"placeholder="dd/mm/aaaa" />
+        </div><br />
+        <div>
+            <label for="email">E-mail*:</label>
+            <input type="email" id="email" placeholder=" nome@dominio.com" />
+        </div><br />
+        <p>Sexo:*</p>
+        <p>
+            
+             <input type="radio" name="Sexo" /> Feminino<br />
+             <input type="radio" name="Sexo" /> Masculino<br />
+             <input type="radio" name="Sexo" /> Não informar
+        </p><br/>
+        <a href="adicionarPessoa.html"><input type="button"value="Limpar"></a>
+<a href="adicionadaComSucesso.html"><input type="button"value="Cadastrar"></a>
+    </form>      
 </body>
 </html>
