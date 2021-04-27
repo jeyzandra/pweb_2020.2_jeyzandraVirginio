@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta codigoSemana4="1913775877">
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+    <title>AgroPopShop - Adicionar Produto</title>
+</head>
+<body>
+  <nav id="menu">
+	<ul>
+        <li><a  class="navbar-brand" href="/">Início</a></li>		
+		<li><a href="/adicionarProduto">Adicionar Produto</a></li>
+        <li><a href="/listarProduto" >Listar Produto</a></li>
+        <li><a href="/adicionarCliente">Adicionar Cliente</a></li>
+        <li><a href="/listarCliente" >Listar Cliente</a></li>		
+    </ul>
+    </nav>
+
+
+	<h1>Cadastrar produto</h1>
+   <form
+    	method="POST"
+    	th:object="${produto}"
+    	th:action="@{/adicionarProduto}">
+    	<p>
+    	Nome do Produto *:
+    	<input type="text" placeholder="nome" th:field="*{nomeproduto}" required />
+    	</p>
+    	<p>
+            Marca*:
+            <input type="text" placeholder="marca" th:field="*{marca}" required/>
+        </p>
+        <p>
+            Altura*:
+            <input type="text" placeholder="altura" th:field="*{altura}" required/>
+        </p>
+        <p>
+            Largura*:
+            <input type="text" placeholder="largura" th:field="*{largura}" required/>
+        </p>
+        <p>
+            Profundidade*:
+            <input type="text" placeholder="profundidade" th:field="*{profundidade}" required/>
+        </p>
+        <p>
+            Peso*:
+            <input type="text" placeholder="peso" th:field="*{peso}" required/>
+        </p>
+        <p>
+            Preço*:
+            <input type="text" placeholder="preço" th:field="*{preco}" required/>
+        </p>
+        
+        <input type="reset" class="button button12Px" value="Limpar">
+        <input type="submit" class="button button12Px" value="Adicionar">
+    </form>
+    <p> *Campo obrigatório</p>
+	
+   
+    
+</body>
+</html>

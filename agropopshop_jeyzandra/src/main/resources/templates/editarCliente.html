@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta codigoSemana4="1913775877">
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+    <title>AgroPopShop - Editar Cliente</title>
+</head>
+<body>
+  <nav id="menu">
+	<ul>
+        <li><a  class="navbar-brand" href="/">Início</a></li>	
+        <li><a href="/adicionarProduto">Adicionar Produto</a></li>
+        <li><a href="/listarProduto" >Listar Produto</a></li>	
+		<li><a href="/adicionarCliente">Adicionar Cliente</a></li>
+        <li><a href="/listarCliente" >Listar Cliente</a></li>		
+    </ul>
+    </nav>
+    
+	
+	<h1> Editar Cliente:</h1>
+    <form action="#"
+    		th:action="@{/editarCliente/{id}(id=${cliente.id})}"
+    		th:object="${cliente}"
+    		method="POST">
+        <P>
+           Nome completo*:
+            <input type="text" placeholder=" Seu nome completo" th:field="*{nome}" required/>
+        </p> <br/>
+        <p>
+             Data de nascimento *:
+            <input type="date" placeholder="dd/mm/aaaa" th:field="*{dataNascimento}" required/>
+        </p><br />
+        <p>
+             e-Mail*:
+            <input type="text" placeholder="nome@dominio.com" th:field="*{email}" required/>
+        </p><br />
+         <p>Gênero:*</p>
+        <p>
+           <p>
+            cidade*:
+            <input type="text" placeholder="cidade" th:field="*{cidade}" required/>
+        </p>
+        <p>
+            cep*:
+            <input type="text" placeholder="cep" th:field="*{cep}" required/>
+        </p>
+        <p>
+            bairro*:
+            <input type="text" placeholder="bairro" th:field="*{bairro}" required/>
+        </p>
+        <p>
+            rua*:
+            <input type="text" placeholder="rua" th:field="*{rua}" required/>
+        </p>
+        <p>
+            numero*:
+            <input type="text" placeholder="numero" th:field="*{numero}" required/>
+        </p>  
+             <input type="radio" name="genero" value="Masculino" th:field="*{genero}" required /> Masculino<br />
+        </p>
+        <p>     
+             <input type="radio" name="genero" value="Feminino" th:field="*{genero}" required /> Feminino<br />
+        </p>   
+        <p>   
+             <input type="radio" name="genero" value="Não Informado" th:field="*{genero}" required /> Não informar<br />
+        </p>     
+        </p>
+        <input type="reset" class="button button12Px" value="Limpar">
+        <input type="submit" class="button button12Px" value="Adicionar">
+	</form>
+	<p> *Campo obrigatório</p>
+	</div>      
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta codigoSemana4="1913775877"> 
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+    <title> AgroPopShop - Listar Produtos </title>
+</head>
+<body>
+   <nav id="menu">
+	<ul>
+        <li><a  class="navbar-brand" href="/">Início</a></li>	
+        <li><a href="/adicionarProduto">Adicionar Produto</a></li>
+        <li><a href="/listarProduto" >Listar Produto</a></li>		
+		<li><a href="/adicionarCliente">Adicionar Cliente</a></li>
+        <li><a href="/listarCliente" >Listar Cliente</a></li>		
+    </ul>
+    </nav>
+   
+		<center><h1>Lista de Produtos</h1></center>
+		<table>
+			<thead>
+				<tr>
+				<th>Id</th>
+				<th>Nome do Produto</th>
+				<th>Marca</th>
+				<th>Altura</th>
+				<th>Largura</th>
+				<th>Profundidade</th>
+				<th>Peso</th>
+				<th>Preço</th>
+				<th>Editar</th>
+				<th>Remover</th>
+				</tr>
+			</thead>
+			<tbody>
+				    <tr th:each="Produto: ${produtos}">
+					<td th:text="${Produto.id}"></td>
+					<td th:text="${Produto.nomeproduto}"></td>
+					<td th:text="${Produto.marca}"></td>
+					<td th:text="${Produto.altura}"></td>
+					<td th:text="${Produto.largura}"></td>
+					<td th:text="${Produto.profundidade}"></td>
+					<td th:text="${Produto.peso}"></td>
+					<td th:text="${Produto.preco}"></td>
+					
+					<td>
+						<a th:href="@{/editar/{id}(id=${Produto.id})}">Editar</a>
+					</td>
+					
+					<td>
+						<a th:href="@{/remover/{id}(id=${Produto.id})}">Remover</a>	
+					</td>
+				</tr>	
+			</tbody>
+		</table>
+</body>
+</html>
